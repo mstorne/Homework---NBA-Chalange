@@ -4,6 +4,7 @@ Python A-Z: Python for Data Science with Real Excercises Challenge - NBA Players
 You have been supplied data for in-game statistics:
 - Games Played
 - Feald Goals
+- Field Goal Attempts
 - Points
 - Free Throws
 - Free Throw Attempts
