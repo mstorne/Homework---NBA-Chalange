@@ -1,4 +1,4 @@
-# Homework---NBA-Chalange
+# Homework---NBA-Challenge
 Python A-Z: Python for Data Science with Real Excercises Challenge - NBA Players Analysis
 
 You have been supplied data for in-game statistics:
