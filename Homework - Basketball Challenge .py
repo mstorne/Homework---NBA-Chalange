@@ -62,6 +62,21 @@ DwayneWade_FG = [699,472,439,854,719,692,416,569,415,509]
 #Matrix Field Goals
 FieldGoals  = np.array([KobeBryant_FG, JoeJohnson_FG, LeBronJames_FG, CarmeloAnthony_FG, DwightHoward_FG, ChrisBosh_FG, ChrisPaul_FG, KevinDurant_FG, DerrickRose_FG, DwayneWade_FG])
 
+#Field Goal Attempts
+KobeBryant_FGA = [2173,1757,1690,1712,1569,1639,1336,1595,73,713]
+JoeJohnson_FGA = [1395,1139,1497,1420,1386,1161,931,1052,1018,1025]
+LeBronJames_FGA = [1823,1621,1642,1613,1528,1485,1169,1354,1353,1279]
+CarmeloAnthony_FGA = [1572,1453,1481,1207,1502,1503,1025,1489,1643,806]
+DwightHoward_FGA = [881,873,974,979,834,1044,726,813,800,423]
+ChrisBosh_FGA = [1087,1094,1027,1263,1158,1056,807,907,953,745]
+ChrisPaul_FGA = [947,871,1291,1255,637,928,890,856,870,1170]
+KevinDurant_FGA = [647,647,1366,1390,1668,1538,1297,1433,1688,467]
+DerrickRose_FGA = [436,436,436,1208,1373,1597,695,0,164,835]
+DwayneWade_FGA = [1413,962,937,1739,1511,1384,837,1093,761,1084]
+
+#Matrix
+FieldGoalAttempts = np.array([KobeBryant_FGA, JoeJohnson_FGA, LeBronJames_FGA, CarmeloAnthony_FGA, DwightHoward_FGA, ChrisBosh_FGA, ChrisPaul_FGA, KevinDurant_FGA, DerrickRose_FGA, DwayneWade_FGA])
+
 #Points
 KobeBryant_PTS = [2832,2430,2323,2201,1970,2078,1616,2133,83,782]
 JoeJohnson_PTS = [1653,1426,1779,1688,1619,1312,1129,1170,1245,1154]
@@ -121,6 +136,10 @@ def myplot(data, playerlist = Players):
     plt.xticks(list(range(0,10)), Seasons, rotation='vertical')
     plt.show()
 
+#Visualize Field Goals Accuracy
+myplot(FieldGoals/FieldGoalAttempts)
+
+#On the chart we can see that Dwight Howard has the highest Field Goal Accuracy comparing to other players
 
 #Visualize Free Throws
 myplot(FreeThrows)
@@ -129,10 +148,12 @@ myplot(FreeThrows)
 #Visualize Free Throws Attempts
 myplot(FreeThrowsAttempts)
 
+#We can notice how Chris Paul gets few Free Throw Attempts per game
 
 #Visualize Free Throws Accuracy
 myplot(FreeThrowsAccuracy)
 
+#Chris Paul's accuracy is one of the highest. If he had more Free Throw Attempts per game his team would get more points. Also, we can see that Dwight Howard's Free Throws accuracy is very poor compared to other players.
 
 #Create new matrix
 FreeThrowAttemptsPerGame = (FreeThrowsAttempts / Games)
@@ -149,6 +170,9 @@ PlayingStyle = (Points - FreeThrows) / FieldGoals
 #Visualize Playing Style
 myplot(PlayingStyle)
 
+#Dwight Howard is not distance player, he dowsn't shoot for three points.
 
 #Visualize Playing Style - Dwight Howard and Chris Bosh
 myplot(PlayingStyle, ["DwightHoward", "ChrisBosh"])
+
+#Dwight Howard haven't changed his style since the begining. On the other side we can notice that Chris Bosh changed his style in his 2013. and 2014. seasson having more 3 pts attempts.
